@@ -1,0 +1,76 @@
+// font scale
+!fs_11 = .916em
+!fs_12 = 1em
+!fs_14 = 1.16em
+!fs_18 = 1.5em
+!fs_21 = 1.75em
+!fs_24 = 2em
+
+
+// font family 
+!ff_d = Verdana,Arial,sans   
+!ff_h = Helvetica,Verdana,Arial,sans   
+
+!lh = 1.5em  
+
+
+// default colorscheme
+!cs_d   = #333      
+!cs_h  = #111       
+!cs_a   = #ff6600   
+!cs_ah  = #000      
+
+
+
+// clearfix
+=clearfix
+  &:after
+    :content "."
+    :display block
+    :height 0
+    :clear both
+    :visibility hidden
+
+
+// image replacement - Phark method
+=ir
+  :display block
+  :overflow hidden
+  :background transparent no-repeat left top
+  :text-align left
+  :text-indent -1000em
+
+
+// image replacement - Gilder method
+=ir_ext
+  :display block
+  :overflow hidden
+  :position relative
+  span
+    :width 100%
+    :height 100%
+    :display block
+    :position absolute
+    :left 0px
+    :top 0px
+    :background transparent no-repea left top
+
+
+// hidden element - for accessibility
+=hidden
+  :position absolute
+  :left -1000em
+
+
+// Eric Mayer reset
+// http://meyerweb.com/eric/tools/css/reset/
+@import inc/reset.sass
+
+// default styles
+@import inc/default.sass
+
+// common elements
+@import inc/common.sass
+
+// layout
+@import inc/layout.sass

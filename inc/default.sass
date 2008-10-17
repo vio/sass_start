@@ -1,0 +1,79 @@
+html
+  :font-size medium
+
+body
+  :background #000
+  :color = !cs_d
+  :font 
+    :weight normal
+    :style normal
+    :size .75em
+    :family = !ff_d
+  :line-height = !lh
+  :text-align center
+
+h1, h2, h3, h4
+  :color = !cs_h
+  :font-family = !ff_h
+  :font-weight normal
+
+h1
+  :font-size = !fs_24
+  :line-height = !lh
+
+h2
+  :font-size = !fs_18
+  :line-height = !lh
+
+h3
+  :font-size = !fs_14
+  :line-height = !lh
+
+h4
+  :font-size = !fs_12
+  :line-height = !lh
+  :font-weight bold
+
+p
+  :margin 0 0 1em
+
+a
+  &:link, &:active, &:visited
+    :color = !cs_a
+    :text-decoration none
+
+  &:hover
+    :color = !cs_ah
+    :text-decoration underline
+
+// forms & elements
+input,select,textarea,button
+  :font
+    :size   = !fs_12
+    :family = !ff_d
+
+form
+  div
+    :margin 0 0.5em
+
+
+// lists
+ol, li 
+  :margin 1em 0 1em 1em
+
+ul li
+  :list-style inside disc none
+
+ol li
+  :list-style inside decimal none
+
+// tables
+table
+  :width 100%
+  td, th 
+    :padding .3em 0.5em
+  th
+    :color = !cs_h 
+    :font-weight bold
+    :text-align left
+
