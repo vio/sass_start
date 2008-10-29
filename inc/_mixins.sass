@@ -1,0 +1,41 @@
+// clearfix
+=clearfix
+  &:after
+    :content "."
+    :display block
+    :height 0
+    :clear both
+    :visibility hidden
+
+
+// image replacement 
+// - Phark method
+=ir
+  :display block
+  :overflow hidden
+  :background transparent no-repeat left top
+  :text-align left
+  :text-indent -1000em
+
+
+// image replacement 
+// - Gilder method
+=ir_ext
+  :display block
+  :overflow hidden
+  :position relative
+  span
+    :width 100%
+    :height 100%
+    :display block
+    :position absolute
+    :left 0px
+    :top 0px
+    :background transparent no-repea left top
+
+
+// hidden element 
+// - used for accessibility in place of display:none
+=hidden
+  :position absolute
+  :left -1000em

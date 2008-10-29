@@ -22,48 +22,13 @@
 
 
 
-// clearfix
-=clearfix
-  &:after
-    :content "."
-    :display block
-    :height 0
-    :clear both
-    :visibility hidden
-
-
-// image replacement - Phark method
-=ir
-  :display block
-  :overflow hidden
-  :background transparent no-repeat left top
-  :text-align left
-  :text-indent -1000em
-
-
-// image replacement - Gilder method
-=ir_ext
-  :display block
-  :overflow hidden
-  :position relative
-  span
-    :width 100%
-    :height 100%
-    :display block
-    :position absolute
-    :left 0px
-    :top 0px
-    :background transparent no-repea left top
-
-
-// hidden element - for accessibility
-=hidden
-  :position absolute
-  :left -1000em
 
 // Eric Mayer reset
 // http://meyerweb.com/eric/tools/css/reset/
 @import inc/_reset.sass
+
+// default styles
+@import inc/_mixins.sass
 
 // default styles
 @import inc/_default.sass
