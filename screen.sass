@@ -1,30 +1,12 @@
-// font scale
-!fs_11 = .916em
-!fs_12 = 1em
-!fs_14 = 1.16em
-!fs_18 = 1.5em
-!fs_21 = 1.75em
-!fs_24 = 2em
+// Main sass file
 
-
-// font family 
-!ff_d = Verdana,Arial,sans   
-!ff_h = Helvetica,Verdana,Arial,sans   
-
-!lh = 1.5em  
-
-
-// default colorscheme
-!cs_d   = #333      
-!cs_h  = #111       
-!cs_a   = #ff6600   
-!cs_ah  = #000      
-
-// Eric Mayer reset
-// http://meyerweb.com/eric/tools/css/reset/
+// reset - Eric Mayer: http://meyerweb.com/eric/tools/css/reset/
 @import inc/_reset.sass
 
-// default styles
+// variables - define specific variables to use on other sass files
+@import inc/_variables.sass
+
+// mixins - declared elements
 @import inc/_mixins.sass
 
 // default styles
@@ -33,5 +15,5 @@
 // common elements
 @import inc/_common.sass
 
-// layout
+// layout elements
 @import inc/_layout.sass
