@@ -3,39 +3,38 @@ html
 
 body
   :background #FFF
-  :color = !cs_d
+  :color #333
   :font 
     :weight normal
     :style normal
     :size .75em
-    :family = !ff_d
-  :line-height = !lh
+    :family Helvetica,Arial,Verdana,sans-serif
+  :line-height 1.33em
   :text-align center
 
 
 // headings
 h1, h2, h3, h4
   :margin 1em 0 0
-  :color = !cs_h
-  :font-family = !ff_h
+  :color #111
   :font-weight normal
 
 h1
   :margin 0 0 1em
-  :font-size = !fs_18
-  :line-height = !lh
+  :font-size 1.5em
+  :line-height 1.2em
 
 h2
-  :font-size = !fs_14
-  :line-height = !lh
+  :font-size 1.33em
+  :line-height 1.2em
 
 h3
-  :font-size = !fs_12
-  :line-height = !lh
+  :font-size 1.18em
+  :line-height 1.2em
 
 h4
-  :font-size = !fs_12
-  :line-height = !lh
+  :font-size 1em
+  :line-height 1.2em
   :font-weight bold
 
 // paragraphs
@@ -45,22 +44,18 @@ p
 // links
 a
   &:link, &:active, &:visited
-    :color = !cs_a
+    :color #FF6600
     :text-decoration none
 
   &:hover
-    :color = !cs_ah
+    :color #FF9900
     :text-decoration underline
 
 // forms & elements
 input,select,textarea,button
   :font
-    :size   = !fs_12
-    :family = !ff_d
-
-form
-  div
-    :margin 0 0.5em
+    :size 1em
+    :family Helvetica,Arial,Verdana,sans
 
 
 // lists
@@ -80,7 +75,17 @@ table
   td, th 
     :padding .3em 0.5em
   th
-    :color = !cs_h 
+    :color #111
     :font-weight bold
     :text-align left
+
+// others
+hr
+  :display none
+
+quote
+  :font-style italic
+
+blockquote
+  :font-style italic
 
