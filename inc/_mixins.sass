@@ -33,6 +33,7 @@
     :top 0px
     :background transparent no-repeat left top
 
+
 // image replacement
 // Leahy/Langridge method
 =ir_ll
@@ -41,7 +42,6 @@
   :overflow hidden
   :height 0px
   :background transparent no-repeat left top
-
 
 
 // hidden element 
@@ -57,3 +57,11 @@
   :padding 0
   li  
     :list-style outside none none
+
+
+// apply fix_png filter
+=fix_png
+  !png_img = none
+  !png_method = crop
+  :background-image none
+  :filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/"+!png_img+"', sizingMethod='"+!png_method+"')"

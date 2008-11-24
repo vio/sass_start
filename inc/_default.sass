@@ -5,10 +5,10 @@ body
   :background #FFF
   :color #333
   :font 
-    :weight normal
     :style normal
     :size .75em
     :family Helvetica,Arial,Verdana,sans-serif
+    :weight normal
   :line-height 1.33em
   :text-align center
 
@@ -37,19 +37,27 @@ h4
   :line-height 1.2em
   :font-weight bold
 
+
 // paragraphs
 p
   :margin 0 0 1em
 
+
 // links
 a
-  &:link, &:active, &:visited
+  &:link,
+  &:visited
     :color #FF6600
     :text-decoration none
 
   &:hover
     :color #FF9900
     :text-decoration underline
+
+  &:active
+    :color #FF6600
+    :text-decoration none
+
 
 // forms & elements
 input,select,textarea,button
