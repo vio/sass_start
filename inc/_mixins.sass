@@ -65,3 +65,10 @@
   !png_method = crop
   :background-image none
   :filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/"+!png_img+"', sizingMethod='"+!png_method+"')"
+
+
+// cross-broswer opacity
+=opacity(!scale)
+  :-moz-opacity = "."+!scale
+  :filter       = "alpha(opacity="+50+")"
+  :opacity      = "."+!scale
