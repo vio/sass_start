@@ -10,18 +10,22 @@
 
 // image replacement 
 // - Phark method
-=ir
+=ir(!image, !width, !height)
   :display block
+  :width = !width + "px"
+  :height = !height + "px"
   :overflow hidden
-  :background transparent no-repeat left top
+  :background = "transparent url("+ !image +") no-repeat left top"
   :text-align left
   :text-indent -1000em
 
 
 // image replacement 
 // - Gilder method
-=ir_ext
+=ir_ext(!image, !width, !height)
   :display block
+  :width = !width + "px"
+  :height = !height + "px"
   :overflow hidden
   :position relative
   span
@@ -31,17 +35,18 @@
     :position absolute
     :left 0px
     :top 0px
-    :background transparent no-repeat left top
+    :background = "transparent url("+ !image +") no-repeat left top"
 
 
 // image replacement
 // Leahy/Langridge method
-=ir_ll
+=ir_ll(!image, !width, !height)
   :display block
-  :padding 0
-  :overflow hidden
+  :width = !width + "px"
   :height 0px
-  :background transparent no-repeat left top
+  :padding  = !height + "px 0px 0px 0px"
+  :overflow hidden
+  :background = "transparent url("+ !image +") no-repeat left top"
 
 
 // hidden element 
@@ -60,11 +65,9 @@
 
 
 // apply fix_png filter
-=fix_png
-  !png_img = none
-  !png_method = crop
+=fix_png(!image, !method=crop)
   :background-image none
-  :filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/"+!png_img+"', sizingMethod='"+!png_method+"')"
+  :filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/"+!image+"', sizingMethod='"+!method+"')"
 
 
 // cross-broswer opacity
