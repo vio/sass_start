@@ -2,98 +2,95 @@ html
   :font-size medium
 
 body
-  :background #FFF
-  :color #333
+  :background   = !cs_bg
+  :color        = !cs_d
   :font 
-    :style normal
-    :size .75em
-    :family Helvetica,Arial,Verdana,sans-serif
-    :weight normal
-  :line-height 1.33em
-  :text-align center
+    :style      normal
+    :size       = !font_base/16 + "em"
+    :family     = !ff_d
+    :weight     normal
+  :line-height  = !lh
 
 
-// headings
+/* Headings
 h1, h2, h3, h4
-  :margin 1em 0 0
-  :color #111
-  :font-weight normal
+  :margin       0
+  :color        = !cs_h
+  :font       
+    :family     = !ff_h
+    :weight     bold
 
 h1
-  :margin 0 0 1em
-  :font-size 1.5em
-  :line-height 1.2em
+  +font_scale(24)
 
 h2
-  :font-size 1.33em
-  :line-height 1.2em
+  +font_scale(18)
 
 h3
-  :font-size 1.18em
-  :line-height 1.2em
+  +font_scale(14)
 
 h4
-  :font-size 1em
-  :line-height 1.2em
-  :font-weight bold
+  +font_scale(12)
 
 
-// paragraphs
+/* Paragraphs
 p
-  :margin 0 0 1em
+  :margin       = 0 0 1em
 
-
-// links
+/* Links
 a
   &:link,
+  &:active,
   &:visited
-    :color #FF6600
-    :text-decoration none
-
-  &:hover
-    :color #FF9900
+    :color      = !cs_a
     :text-decoration underline
 
-  &:active
-    :color #FF6600
+  &:hover
+    :color      = !cs_h
     :text-decoration none
 
+/* Forms elements
+input,
+select,
+textarea,
+button
+  :color        = !cs_d
+  :font         = normal normal normal 1em/!lh !ff_d
 
-// forms & elements
-input,select,textarea,button
-  :font
-    :size 1em
-    :family Helvetica,Arial,Verdana,sans
-
-
-// lists
-ol, ul
-  :margin 1em 0 1em 1em
+/* Lists
+ul, 
+ol, 
+dl
+  :margin       1em 0 1em 1em
 
 ul li
-  :list-style inside disc none
+  :list-style   inside disc none
 
 ol li
-  :list-style inside decimal none
+  :list-style   inside decimal none
 
+dd
+  :margin-left  1em
 
-// tables
+/* Tables
 table
   :width 100%
+  
   td, th 
-    :padding .3em 0.5em
-  th
-    :color #111
-    :font-weight bold
-    :text-align left
+    :padding     .5em
 
-// others
+  th
+    :color        = !cs_h
+    :font-weight  bold
+    :text-align   left
+
+/* Others
 hr
-  :display none
+  :display        none
 
 quote
-  :font-style italic
+  :font-style     italic
 
 blockquote
-  :font-style italic
+  :font-style     italic
 

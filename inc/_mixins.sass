@@ -1,4 +1,4 @@
-// clearfix
+// clearfix method
 =clearfix
   &:after
     :content "."
@@ -10,43 +10,43 @@
 
 // image replacement 
 // - Phark method
-=ir(!image, !width, !height)
-  :display block
-  :width = !width + "px"
-  :height = !height + "px"
-  :overflow hidden
-  :background = "transparent url("+ !image +") no-repeat left top"
-  :text-align left
-  :text-indent -1000em
+=ir(!_image, !_width, !_height)
+  :display      block
+  :width        = !_width + "px"
+  :height       = !_height + "px"
+  :overflow     hidden
+  :background   = "transparent url("+ !_image +") no-repeat 0 0"
+  :text-align   left
+  :text-indent  -1000em
 
 
 // image replacement 
 // - Gilder method
-=ir_ext(!image, !width, !height)
-  :display block
-  :width = !width + "px"
-  :height = !height + "px"
-  :overflow hidden
-  :position relative
+=ir_ext(!_image, !_width, !_height)
+  :display      block
+  :width        = !_width + "px"
+  :height       = !_height + "px"
+  :overflow     hidden
+  :position     relative
   span
-    :width 100%
-    :height 100%
-    :display block
-    :position absolute
-    :left 0px
-    :top 0px
-    :background = "transparent url("+ !image +") no-repeat left top"
+    :width      100%
+    :height     100%
+    :display    block
+    :position   absolute
+    :left       0px
+    :top        0px
+    :background = "transparent url("+ !_image +") no-repeat 0 0"
 
 
 // image replacement
 // Leahy/Langridge method
-=ir_ll(!image, !width, !height)
-  :display block
-  :width = !width + "px"
-  :height 0px
-  :padding  = !height + "px 0px 0px 0px"
-  :overflow hidden
-  :background = "transparent url("+ !image +") no-repeat left top"
+=ir_ll(!_image, !_width, !_height)
+  :display      block
+  :width        = !_width + "px"
+  :height       0px
+  :padding      = !_height + "px 0px 0px 0px"
+  :overflow     hidden
+  :background   = "transparent url("+ !_image +") no-repeat 0 0"
 
 
 // hidden element 
@@ -54,24 +54,45 @@
 =hidden
   :position absolute
   :left -1000em
+  :text-align left
+
+
+=rm_hidden
+  :position static
+  :left 0px
 
 
 // reset default list styles
 =reset_list
   :margin 0
   :padding 0
-  li  
+  li
     :list-style outside none none
 
 
-// apply fix_png filter
-=fix_png(!image, !method=crop)
+// Scale font based on current font_size
+=font_scale(!_size, !_base = !font_base, !_line_height = !lh )
+  :font-size    = !_size/!_base + "em"
+  :line-height  = !_line_height 
+
+
+// Background
+=bg(!_url, !_background = transparent, !_repeat = no-repeat, !_position = 0 0)
+  :background = !_background url(!images_url+!_url) !_repeat !_position
+
+
+// Apply fix_png filter
+=fix_png(!_image, !_method=crop)
   :background-image none
-  :filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/"+!image+"', sizingMethod='"+!method+"')"
+  :filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+!images_abs_url+!_image+"', sizingMethod='"+!_method+"')"
 
 
 // cross-broswer opacity
-=opacity(!scale)
-  :-moz-opacity = "."+!scale
-  :filter       = "alpha(opacity="+50+")"
-  :opacity      = "."+!scale
+=opacity(!_scale)
+  :-moz-opacity = "."+!_scale
+  :filter       = "alpha(opacity="+!_scale+")"
+  :opacity      = "."+!_scale
+
+// dev - outline element
+=dev
+  :outline 1px dotted magenta
