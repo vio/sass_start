@@ -8,12 +8,7 @@ html
 body
   :background   = !cs_bg
   :color        = !cs_d
-  :font 
-    :style      normal
-    :size       = !font_base/16 + "em"
-    :family     = !ff_d
-    :weight     normal
-  :line-height  = !lh
+  :font         = normal normal !font_base/16 + "em/" + !lh !ff_d 
 
 
 /* Headings
@@ -60,7 +55,7 @@ select,
 textarea,
 button
   :color        = !cs_d
-  :font         = normal normal normal 1em/!lh !ff_d
+  :font         = normal normal "1em/" + !lh !ff_d 
 
 button
   :cursor pointer
@@ -103,10 +98,10 @@ quote
   :font-style     italic
 
 ins
-	:text-decoration none
+  :text-decoration none
 
 del
-	:text-decoration line-through
+  :text-decoration line-through
 
 blockquote,
 quote
