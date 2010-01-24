@@ -3,24 +3,24 @@
 
 /* Base
 html
-  :font-size medium
+  font-size:      medium
 
 body
-  :background   = !cs_bg
-  :color        = !cs_d
-  :font         = normal normal !font_base/16 + "em/" + !lh !ff_d 
+  background:     #{!cs_bg}
+  color:          #{!cs_d}
+  font:           normal normal #{!font_base/16}em/#{!lh} #{!ff_d}
 
 
 /* Headings
 h1, h2, h3, h4
-  :margin       1em 0 0
-  :color        = !cs_h
-  :font       
-    :family     = !ff_h
-    :weight     bold
+  margin:         1em 0 0
+  color:          #{!cs_h}
+  font:
+    family:       #{!ff_h}
+    weight:       bold
 
 h1
-  :margin 0 
+  margin: 0 
   +font_scale(24)
 
 h2
@@ -35,75 +35,73 @@ h4
 
 /* Paragraphs
 p
-  :margin       = 0 0 1em
+  margin:         0 0 1em
 
 /* Links
 a
   &:link,
   &:active,
   &:visited
-    :color      = !cs_a
-    :text-decoration underline
+    color:        #{!cs_a}
+    text-decoration: underline
 
   &:hover
-    :color      = !cs_h
-    :text-decoration none
+    color:        #{!cs_h}
+    text-decoration: none
 
 /* Forms elements
 input,
 select,
 textarea,
 button
-  :color        = !cs_d
-  :font         = normal normal "1em/" + !lh !ff_d 
+  color:          #{!cs_d}
+  font:           normal normal 1em/#{!lh} #{!ff_d}
 
 button
-  :cursor pointer
-
+  cursor:         pointer
 
 /* Lists
 ul, 
 ol, 
 dl
-  :margin       1em 0 1em 1em
+  margin:         1em 0 1em 1em
 
 ul li
-  :list-style   inside disc none
+  list-style:     inside disc none
 
 ol li
-  :list-style   inside decimal none
+  list-style:     inside decimal none
 
 dd
-  :margin-left  1em
+  margin-left:    1em
 
 
 /* Tables
 table
-  :width 100%
+  width: 100%
   
   td, th 
-    :padding     .5em
+    padding:      .5em
 
   th
-    :color        = !cs_h
-    :font-weight  bold
-    :text-align   left
+    color:        #{!cs_h}
+    font-weight:  bold
+    text-align:   left
 
 
 /* Others
 hr
-  :display        none
+  display:        none
 
 quote
-  :font-style     italic
+  font-style:     italic
 
 ins
-  :text-decoration none
+  text-decoration: none
 
 del
-  :text-decoration line-through
+  text-decoration: line-through
 
 blockquote,
 quote
-  :font-style     italic
-
+  font-style:       italic

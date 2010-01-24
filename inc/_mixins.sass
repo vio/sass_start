@@ -1,98 +1,85 @@
-// clearfix method
+// clearfix method - http://www.positioniseverything.net/easyclearing.html
 =clearfix
   &:after
-    :content "."
-    :display block
-    :height 0
-    :clear both
-    :visibility hidden
+    content:    "."
+    display:    block
+    height:     0
+    clear:      both
+    visibility: hidden
 
-
-// image replacement 
-// - Phark method
+// image replacement - Phark method
 =ir(!_image, !_width, !_height)
-  :display      block
-  :width        = !_width + "px"
-  :height       = !_height + "px"
-  :overflow     hidden
-  :background   = "transparent url("+ !_image +") no-repeat 0 0"
-  :text-align   left
-  :text-indent  -1000em
+  display:      block
+  width:        #{!_width}px
+  height:       #{!_height}px
+  overflow:     hidden
+  background:   transparent url(#{!_image}) no-repeat 0 0
+  text-align:   left
+  text-indent:  -1000em
 
-
-// image replacement 
-// - Gilder method
+// image replacement - Gilder method
 =ir_ext(!_image, !_width, !_height)
-  :display      block
-  :width        = !_width + "px"
-  :height       = !_height + "px"
-  :overflow     hidden
-  :position     relative
+  display:      block
+  width:        #{!_width}px
+  height:       #{!_height}px
+  overflow:     hidden
+  position:     relative
+
   span
-    :width      100%
-    :height     100%
-    :display    block
-    :position   absolute
-    :left       0px
-    :top        0px
-    :background = "transparent url("+ !_image +") no-repeat 0 0"
+    width:      100%
+    height:     100%
+    display:    block
+    position:   absolute
+    left:       0px
+    top:        0px
+    background: transparent url(#{!_image}) no-repeat 0 0
 
-
-// image replacement
-// Leahy/Langridge method
+// image replacement - Leahy/Langridge method
 =ir_ll(!_image, !_width, !_height)
-  :display      block
-  :width        = !_width + "px"
-  :height       0px
-  :padding      = !_height + "px 0px 0px 0px"
-  :overflow     hidden
-  :background   = "transparent url("+ !_image +") no-repeat 0 0"
+  display:      block
+  width:        #{!_width}px
+  height:       0px
+  padding:      #{!_height}px 0 0 0
+  overflow:     hidden
+  background:   transparent url(#{!_image}) no-repeat 0 0
 
+// background
+=bg(!_url, !_background = "transparent", !_repeat = "no-repeat", !_position = "0 0")
+  background: #{!_background} url(#{!images_url}#{!_url}) #{!_repeat} #{!_position}
 
-// hidden element 
-// - used for accessibility in place of display:none
+// hide element - used for accessibility in place of display:none
 =hidden
-  :position absolute
-  :left -1000em
-  :text-align left
-
+  position:     absolute
+  left:         -1000em
+  text-align:   left
 
 =rm_hidden
-  :position static
-  :left 0px
-
+  position:     static
+  left:         auto
 
 // reset default list styles
 =reset_list
-  :margin 0
-  :padding 0
+  margin:       0
+  padding:      0
   li
-    :list-style outside none none
-
+    list-style: outside none none
 
 // Scale font based on current font_size
 =font_scale(!_size, !_base = !font_base, !_line_height = !lh )
-  :font-size    = !_size/!_base + "em"
-  :line-height  = !_line_height 
-
-
-// Background
-=bg(!_url, !_background = transparent, !_repeat = no-repeat, !_position = 0 0)
-  :background = !_background url(!images_url+!_url) !_repeat !_position
-
+  font-size:    #{!_size/!_base}em
+  line-height:  #{!_line_height}
 
 // Apply fix_png filter
-=fix_png(!_image, !_method=crop)
-  :background-image none
-  :filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+!images_abs_url+!_image+"', sizingMethod='"+!_method+"')"
-
+=fix_png(!_image, !_method="crop")
+  background-image: none
+  filter: progidDXImageTransform.Microsoft.AlphaImageLoader(src='#{!images_abs_url}#{!_image}', sizingMethod='#{!_method+}')
 
 // cross-broswer opacity
 =opacity(!_scale)
-  :-moz-opacity = "."+!_scale
-  :filter       = "alpha(opacity="+!_scale+")"
-  :opacity      = "."+!_scale
+  -moz-opacity: .#{!_scale}
+  filter:       alpha(opacity=#{!_scale})
+  opacity:      .#{!_scale}
 
 // dev - outline element
 =dev
-  :outline 1px dotted magenta
+  outline:      1px dotted magenta
