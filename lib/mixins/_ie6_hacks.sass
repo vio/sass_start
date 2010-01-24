@@ -1,0 +1,4 @@
+// Apply alpha png filter
+=fix_png(!_image, !_method="crop")
+  background-image: none
+  filter: progidDXImageTransform.Microsoft.AlphaImageLoader(src='#{!img_abs_url}#{!_image}', sizingMethod='#{!_method+}')
