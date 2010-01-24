@@ -6,18 +6,16 @@ html
   font-size:      medium
 
 body
-  background:     #{!cs_bg}
-  color:          #{!cs_d}
-  font:           normal normal #{!font_base/16}em/#{!lh} #{!ff_d}
+  background:     #{!color_background}
+  color:          #{!color}
+  font:           normal normal #{!font_base/16}em/#{!font_line_height} #{!font_family}
 
 
 /* Headings
 h1, h2, h3, h4
   margin:         1em 0 0
-  color:          #{!cs_h}
-  font:
-    family:       #{!ff_h}
-    weight:       bold
+  color:          #{!color_header}
+  font-weight:    bold
 
 h1
   margin: 0 
@@ -37,25 +35,26 @@ h4
 p
   margin:         0 0 1em
 
+
 /* Links
 a
+  color:        #{!color_link}
   &:link,
   &:active,
   &:visited
-    color:        #{!cs_a}
     text-decoration: underline
 
   &:hover
-    color:        #{!cs_h}
     text-decoration: none
+
 
 /* Forms elements
 input,
 select,
 textarea,
 button
-  color:          #{!cs_d}
-  font:           normal normal 1em/#{!lh} #{!ff_d}
+  color:          #{!color}
+  font:           normal normal 1em/#{!font_line_height} #{!font_family}
 
 button
   cursor:         pointer
@@ -84,7 +83,7 @@ table
     padding:      .5em
 
   th
-    color:        #{!cs_h}
+    color:        #{!color_header}
     font-weight:  bold
     text-align:   left
 

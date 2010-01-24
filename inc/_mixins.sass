@@ -13,7 +13,7 @@
   width:        #{!_width}px
   height:       #{!_height}px
   overflow:     hidden
-  background:   transparent url(#{!_image}) no-repeat 0 0
+  background:   transparent url(#{!img_url}#{!_image}) no-repeat 0 0
   text-align:   left
   text-indent:  -1000em
 
@@ -32,7 +32,7 @@
     position:   absolute
     left:       0px
     top:        0px
-    background: transparent url(#{!_image}) no-repeat 0 0
+    background: transparent url(#{!img_url}#{!_image}) no-repeat 0 0
 
 // image replacement - Leahy/Langridge method
 =ir_ll(!_image, !_width, !_height)
@@ -41,11 +41,11 @@
   height:       0px
   padding:      #{!_height}px 0 0 0
   overflow:     hidden
-  background:   transparent url(#{!_image}) no-repeat 0 0
+  background:   transparent url(#{!img_url}#{!_image}) no-repeat 0 0
 
 // background
 =bg(!_url, !_background = "transparent", !_repeat = "no-repeat", !_position = "0 0")
-  background: #{!_background} url(#{!images_url}#{!_url}) #{!_repeat} #{!_position}
+  background: #{!_background} url(#{!img_url}#{!_url}) #{!_repeat} #{!_position}
 
 // hide element - used for accessibility in place of display:none
 =hidden
@@ -65,14 +65,14 @@
     list-style: outside none none
 
 // Scale font based on current font_size
-=font_scale(!_size, !_base = !font_base, !_line_height = !lh )
+=font_scale(!_size, !_base = !font_base, !_line_height = !font_line_height )
   font-size:    #{!_size/!_base}em
   line-height:  #{!_line_height}
 
 // Apply fix_png filter
 =fix_png(!_image, !_method="crop")
   background-image: none
-  filter: progidDXImageTransform.Microsoft.AlphaImageLoader(src='#{!images_abs_url}#{!_image}', sizingMethod='#{!_method+}')
+  filter: progidDXImageTransform.Microsoft.AlphaImageLoader(src='#{!img_abs_url}#{!_image}', sizingMethod='#{!_method+}')
 
 // cross-broswer opacity
 =opacity(!_scale)
