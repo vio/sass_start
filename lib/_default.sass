@@ -6,15 +6,15 @@ html
   font-size:      medium
 
 body
-  background:     #{!color_background}
-  color:          #{!color}
-  font:           normal normal #{!font_base/16}em/#{!font_line_height} #{!font_family}
+  background:     $color_background
+  color:          $color
+  font:           normal normal #{$font_base/16}em/#{$font_line_height} #{$font_family}
 
 
 /* Headings
 h1, h2, h3, h4
   margin:         1em 0 0
-  color:          #{!color_header}
+  color:          $color_header
   font-weight:    bold
 
 h1
@@ -38,7 +38,7 @@ p
 
 /* Links
 a
-  color:        #{!color_link}
+  color:        $color_link
   &:link,
   &:active,
   &:visited
@@ -53,8 +53,8 @@ input,
 select,
 textarea,
 button
-  color:          #{!color}
-  font:           normal normal 1em/#{!font_line_height} #{!font_family}
+  color:          $color
+  font:           normal normal 1em/#{$font_line_height} #{$font_family}
 
 button
   cursor:         pointer
@@ -83,7 +83,7 @@ table
     padding:      .5em
 
   th
-    color:        #{!color_header}
+    color:        $color_header
     font-weight:  bold
     text-align:   left
 

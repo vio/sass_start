@@ -1,38 +1,26 @@
 // Image replacement - Phark method
-=ir(!_image, !_width, !_height, !_position = "0 0")
-  display:      block
-  width:        #{!_width}px
-  height:       #{!_height}px
-  overflow:     hidden
-  background:   transparent url(#{!img_url}#{!_image}) no-repeat #{!_position}
-  text-align:   left
-  text-indent:  -1000em
+@mixin ir($image, $width, $height, $position: unquote("0 0"))
+  @extend       .ir
+  width:        #{$width}px
+  height:       #{$height}px
+  background:   transparent url(#{$img_url}#{$image}) no-repeat #{$position}
 
 // Image replacement - Gilder method
-=ir_ext(!_image, !_width, !_height, !_position = "0 0")
-  display:      block
-  width:        #{!_width}px
-  height:       #{!_height}px
-  overflow:     hidden
-  position:     relative
+@mixin ir_ext($image, $width, $height, $position: unquote("0 0"))
+  @extend       .ir_ext
+  width:        #{$width}px
+  height:       #{$height}px
   span
-    width:      100%
-    height:     100%
-    display:    block
-    position:   absolute
-    left:       0px
-    top:        0px
-    background: transparent url(#{!img_url}#{!_image}) no-repeat #{!_position}
+    background: transparent url(#{$img_url}#{$image}) no-repeat #{$position}
 
 // Image replacement - Leahy/Langridge method
-=ir_ll(!_image, !_width, !_height, !_position = "0 0")
-  display:      block
-  width:        #{!_width}px
-  height:       0px
-  padding:      #{!_height}px 0 0 0
-  overflow:     hidden
-  background:   transparent url(#{!img_url}#{!_image}) no-repeat #{!_position}
+@mixin ir_ll($image, $width, $height, $position: unquote("0 0"))
+  @extend       .ir_ll
+  width:        #{$width}px
+  padding:      #{$height}px 0 0 0
+  background:   transparent url(#{$img_url}#{$image}) no-repeat #{$position}
 
-// Background
-=bg(!_url, !_background = "transparent", !_repeat = "no-repeat", !_position = "0 0")
-  background: #{!_background} url(#{!img_url}#{!_url}) #{!_repeat} #{!_position}
+
+// Top left background image
+@mixin bg($image, $background: transparent, $repeat: no-repeat, $position: unquote("0 0"))
+  background: $background url(#{$img_url}#{$image}) $repeat $position

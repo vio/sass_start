@@ -1,5 +1,5 @@
 // Cross-broswer opacity
-=opacity(!_scale)
-  -moz-opacity: .#{!_scale}
-  filter:       alpha(opacity=#{!_scale})
-  opacity:      .#{!_scale}
+@mixin opacity($scale)
+  -moz-opacity: "." + #{$scale}
+  filter:       alpha(opacity=#{$scale})
+  opacity:      "." + #{$scale}

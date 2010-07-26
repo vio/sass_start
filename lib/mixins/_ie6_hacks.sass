@@ -1,4 +1,4 @@
 // Apply alpha png filter
-=fix_png(!_image, !_method="crop")
-  background-image: none
-  filter: progidDXImageTransform.Microsoft.AlphaImageLoader(src='#{!img_abs_url}#{!_image}', sizingMethod='#{!_method+}')
+@mixin fix_png($image, $method="crop")
+  background-image:   none
+  filter:             progidDXImageTransform.Microsoft.AlphaImageLoader(src='#{$img_abs_url}#{$image}', sizingMethod='#{$method}')
