@@ -13,12 +13,10 @@ blockquote,
 q
   quotes: none
 
-blockquotebefore,
-blockquoteafter,
-qbefore,
-qafter
-  content: ''
-  content: none
+  &:after,
+  &:before
+    content: ''
+    content: none
 
 table
   border-collapse: collapse
